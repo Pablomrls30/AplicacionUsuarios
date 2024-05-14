@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionUsuarios.Vistas.Config.Productosconfig"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="70,*">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#11FFBD" Offset="0.1"/>
+                    <GradientStop Color="#D6F4E7" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ImageButton Source="https://i.ibb.co/SwW9d5y/image.png"
+                         BackgroundColor="Transparent"
+                         HorizontalOptions="Start"
+                         Margin="10,40,0,0"
+                         Command="{Binding Volvercomamd}"/>
+            <Frame Grid.Row="1" Padding="0"
+                   Margin="10" CornerRadius="15"
+                   BackgroundColor="#5B55E1">
+                <StackLayout Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/sj3kHP6/image.png"
+                               HeightRequest="30"
+                               />
+                        <Label Text="Descripcion:"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+                               Placeholder="Ingrese la descripcion"
+                               HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding txtDescripcion}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/ZcdrgbR/image.png"
+           HeightRequest="30"
+           />
+                        <Label Text="Precioventa"
+           FontSize="18"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+           Placeholder="Ingrese el precio de venta"
+           HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding txtPrecioventa}"
+                               Keyboard="Numeric"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/Y2BKCht/image.png"
+           HeightRequest="30"/>
+                        <Label Text="Precio de compra"
+           FontSize="18"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+           Placeholder="Ingrese P. compra"
+           HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding txtPreciocompra}"
+                               Keyboard="Numeric"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/0Mn88cp/image.png"
+HeightRequest="30"
+/>
+                        <Label Text="Kg"
+FontSize="18"
+FontAttributes="Bold"
+VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+Placeholder="Ingrese Und"
+HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding txtKg}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/RYKydBK/image.png"
+HeightRequest="30"
+/>
+                        <Label Text="Tipo de basura"
+FontSize="18"
+FontAttributes="Bold"
+VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+Placeholder="Ingrese el color"
+HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding txtTipodebasura}"/>
+                    </StackLayout>
+
+                    <Button Text="Guardar"
+                            HorizontalOptions="Center"
+                            CornerRadius="15"
+                            BackgroundColor="White"
+                            FontAttributes="Bold"
+                            VerticalOptions="EndAndExpand"
+                            Command="{Binding Insertarcomamd}"/>
+
+                    <Image Source="https://i.ibb.co/Y4SxnNx/image.png"
+                           HeightRequest="180"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

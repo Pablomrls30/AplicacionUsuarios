@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="AplicacionUsuarios.Vistas.MenuPrincipal"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="300,130,40,*"
+          Background="#E9EDF3">
+
+        <degradado:PancakeView BackgroundColor="White"
+                               CornerRadius="0,0,30,30">
+            <Frame Margin="15,30,15,30"
+                   CornerRadius="15"
+                   HasShadow="False">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#11FFBD" Offset="0.1"/>
+                        <GradientStop Color="#D6F4E7" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+
+                <StackLayout>
+                    <Label Text="Administrador"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+
+                    <Grid ColumnDefinitions="*,*">
+                        <StackLayout VerticalOptions="Center">
+                            <Image Source="https://i.ibb.co/7J474xP/image.png"
+                                   HeightRequest="30"
+                                   HorizontalOptions="Start"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Eco"
+                                       CharacterSpacing="3"
+                                       FontSize="15.5"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center"/>
+                                <Button Text="Venta"
+                                        BackgroundColor="#D0F2D8"
+                                        CornerRadius="15"
+                                        FontAttributes="Bold"
+                                        TextColor="#29CE69"
+                                        FontSize="20"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                        <Image Grid.Column="1"
+                               Source="https://i.ibb.co/Bc7rhxZ/image.png"/>
+                    </Grid>
+                </StackLayout>
+
+
+            </Frame>
+
+        </degradado:PancakeView>
+
+        <Frame Grid.Row="1"
+               CornerRadius="20"
+               HasShadow="False"
+               Margin="15,15,15,0"
+               Padding="10">
+            <Grid ColumnDefinitions="*,*"
+                  VerticalOptions="Center">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           Padding="0"
+                           BackgroundColor="#EEF1FD"
+                           CornerRadius="25"
+                           HorizontalOptions="Center">
+                        <Image Source="https://i.ibb.co/p3Xkcc4/image.png"
+                               HeightRequest="35"
+                               Margin="10"
+                                     x:Name="btnconfig"/>
+                    </Frame>
+                    <Label Text="Asignar"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Navegarmenuconfigcomamd}"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout >
+                <StackLayout Grid.Column="1">
+                    <Frame HasShadow="False"
+           Padding="0"
+           BackgroundColor="#EEF1FD"
+           CornerRadius="25"
+           HorizontalOptions="Center">
+                        <Image Source="https://i.ibb.co/kD2m8FF/image.png"
+               HeightRequest="35"
+               Margin="10"/>
+                    </Frame>
+                    <Label Text="Actualizar"
+           HorizontalOptions="Center"
+           TextColor="Black"
+           FontSize="12"
+           FontAttributes="Bold"/>
+                </StackLayout>
+            </Grid>
+        </Frame>
+
+        <Label Grid.Row="2"
+               Text="Mas opciones"
+               FontAttributes="Bold"
+               FontSize="18"
+               TextColor="Black"
+               Margin="16,0,0,0"
+               VerticalOptions="Center"/>
+
+        <Frame Grid.Row="3"
+               CornerRadius="20"
+               Margin="15,0,15,0"
+               HasShadow="False">
+
+            <CollectionView ItemsSource="{Binding ListasolRecojo}"
+                            x:Name="Listasolicitudes">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="1"
+                                     VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="https://i.ibb.co/qFRLzRK/image.png"
+                                       HeightRequest="30"/>
+                                <Label VerticalOptions="Center"/>
+                                <Button Text="Buscar recolectores"
+                                        CornerRadius="15"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        Command="{Binding Source={x:Reference
+                                    Listasolicitudes}
+                                    ,Path=BindingContext.NavegarAsignacionescomamd}"
+                                        CommandParameter="{Binding .}"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+    </Grid>
+</ContentPage>

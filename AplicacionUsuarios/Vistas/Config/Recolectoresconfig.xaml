@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionUsuarios.Vistas.Config.Recolectoresconfig"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="70,*">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#11FFBD" Offset="0.1"/>
+                    <GradientStop Color="#D6F4E7" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ImageButton Source="https://i.ibb.co/SwW9d5y/image.png"
+                         BackgroundColor="Transparent"
+                         HorizontalOptions="Start"
+                         Margin="10,40,0,0"
+                         Command="{Binding Volvercomamd}"/>
+            <Frame Grid.Row="1" Padding="0"
+                   Margin="10" CornerRadius="15"
+                   BackgroundColor="#5B55E1">
+                <StackLayout Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/jrZB3zc/image.png"
+                               HeightRequest="30"
+                               />
+                        <Label Text="Nombre"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+                               Placeholder="Ingrese su nombre completo"
+                               HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding Txtnombre}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/dPn2tvY/image.png"
+           HeightRequest="30"
+           />
+                        <Label Text="Identificación"
+           FontSize="18"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+           Placeholder="Ingrese la identificación"
+           HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding Txtidentificacion}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/tYsrjpf/image.png"
+           HeightRequest="30"/>
+                        <Label Text="Correo"
+           FontSize="18"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+           Placeholder="Ingrese su correo"
+           HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding Txtcorreo}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/khXL6hH/image.png"
+HeightRequest="30"
+/>
+                        <Label Text="Contraseña"
+FontSize="18"
+FontAttributes="Bold"
+VerticalOptions="Center"
+                               TextColor="White"/>
+                        <Entry FontSize="18"
+Placeholder="Ingrese su contraseña"
+HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               Text="{Binding Txtcontraseña}"/>
+                    </StackLayout>
+
+                    <Button Text="Guardar"
+                            HorizontalOptions="Center"
+                            CornerRadius="15"
+                            BackgroundColor="White"
+                            FontAttributes="Bold"
+                            VerticalOptions="EndAndExpand"
+                            Command="{Binding Insertarcomamd}"
+                            Margin="50,50,50,50"/>
+
+                    <Image Source="https://i.ibb.co/JKvrfkj/image.png"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+    
