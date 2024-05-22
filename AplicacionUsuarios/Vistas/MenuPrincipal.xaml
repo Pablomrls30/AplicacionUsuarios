@@ -89,11 +89,11 @@
            BackgroundColor="#EEF1FD"
            CornerRadius="25"
            HorizontalOptions="Center">
-                        <Image Source="https://i.ibb.co/kD2m8FF/image.png"
+                        <Image Source=""
                HeightRequest="35"
                Margin="10"/>
                     </Frame>
-                    <Label Text="Actualizar"
+                    <Label Text=""
            HorizontalOptions="Center"
            TextColor="Black"
            FontSize="12"
